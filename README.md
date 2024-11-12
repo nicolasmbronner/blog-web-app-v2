@@ -40,4 +40,5 @@ npm start
 
 Even if it's a personal project, suggestions and feedbacks are welcome via GitHub issues.
 
-
+# Contacts
+Created by [Nicolas Marx-Bronner](https://github.com/nicolasmbronner). 
