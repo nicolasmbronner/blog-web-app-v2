@@ -6,12 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 <!--
 Convention de notation :
-- **Added**: Nouvelle feature, fonction ou dépendance
-- **Changed**: Modification de l'existant (sans le casser)
-- **Deprecated**: Existant marqué comme obsolète, à retirer dans une future version MAJOR
-- **Removed**: Retrait d'une feature, fonction ou dépendance (toujours en version MAJOR)
-- **Fixed**: Correction de bugs ou problèmes (sans changer le comportement attendu)
-- **Security**: Changements liés à la sécurité (vulnérabilités, protection des données)
+- Added: Nouvelle feature, fonction ou dépendance
+- Changed: Modification de l'existant (sans le casser)
+- Deprecated: Existant marqué comme obsolète, à retirer dans une future version MAJOR
+- Removed: Retrait d'une feature, fonction ou dépendance (toujours en version MAJOR)
+- Fixed: Correction de bugs ou problèmes (sans changer le comportement attendu)
+- Security: Changements liés à la sécurité (vulnérabilités, protection des données)
 -->
 
 ## [Unreleased]
