@@ -1,21 +1,33 @@
 # blog-web-app-v2
 A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
 
+# Colors
+```
+DARK MODE
+Background : 141518
+Main Color : FFFFFF
+Sec. Color : AFAFAF
+Edit : 425DE1
+Delete : E14942
+
+LIGHT MODE
+Background : FFFFFF
+Main Color : 000000
+Sec. Color : 515151
+```
+
 # Installation
 *Instructions for cloning the repository and installing the required depencencies*
 
 ```bash
-# Cloner le repository
+# Clone repository
 git clone https://github.com/votre-username/blog-web-app-v2.git
 
-# Accéder au dossier
+# Access folder
 cd blog-web-app-v2
 
-# Installer les dépendances
+# Install dependencies
 npm install
-
-# Lancer l'application
-npm start
 ```
 
 # Usage
