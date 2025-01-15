@@ -1,49 +1,39 @@
 # blog-web-app-v2
 A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
 
-# Colors (Hex Codes)
-```
-DARK MODE
-Background   141518
-Main Color   FFFFFF
-Sec. Color   AFAFAF
-Edit         425DE1
-Delete       E14942
+## Author
 
-LIGHT MODE
-Background   FFFFFF
-Main Color   000000
-Sec. Color   515151
-```
+- [@nicolasmbronner](https://github.com/nicolasmbronner)
 
-# Installation
-*Instructions for cloning the repository and installing the required depencencies*
 
-```bash
-# Clone repository
-git clone https://github.com/votre-username/blog-web-app-v2.git
+## License
 
-# Access folder
-cd blog-web-app-v2
 
-# Install dependencies
-npm install
-```
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+## Color Reference
 
-# Usage
-*Information about how to start the project with some usage examples*
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Background Dark | ![#141518](https://placehold.co/10/141518/141518) #141518|
+| Main C.Dark | ![#FFFFFF](https://placehold.co/10/FFFFFF/FFFFFF) #FFFFFF |
+| Secondary C.Dark | ![#AFAFAF](https://placehold.co/10/F8F8F8/F8F8F8) #F8F8F8 |
+| Background Light | ![#FFFFFF](https://placehold.co/10/FFFFFF/FFFFFF) #FFFFFF|
+| Main C.Light | ![#000000](https://placehold.co/10/000000/000000) #000000 |
+| Secondary C.Light | ![#515151](https://placehold.co/10/515151/515151) #515151 |
+| Edit Color | ![#425DE1](https://placehold.co/10/425DE1/425DE1) #425DE1 |
+| Delete Color | ![#E14942](https://placehold.co/10/E14942/E14942) #E14942 | 
 
-- How to read an article
-- How to edit an article
-- How to delete an article (including swipe function)
-- How to restore an article
-- How to create an article
-- How to swith theme
 
-# Contribution
-*Indications of how other developers can contribute to the project*
+## Features
 
-Even if it's a personal project, suggestions and feedbacks are welcome via GitHub issues.
+- Read articles
+- Create, Edit, Delete your articles
+- Light/dark mode toggle
+- Realtime feedbacks
+- Cross platform
 
-# Contacts
-Created by [Nicolas Marx-Bronner](https://github.com/nicolasmbronner). 
+
+## Screenshots
+
+![App Screenshot](https://placehold.co/468x300)
+
