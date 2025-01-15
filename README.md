@@ -1,14 +1,14 @@
 # blog-web-app-v2
 A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
 
-# Colors
+# Colors (Hex Codes)
 ```
 DARK MODE
 Background : 141518
 Main Color : FFFFFF
 Sec. Color : AFAFAF
-Edit : 425DE1
-Delete : E14942
+Edit :       425DE1
+Delete :     E14942
 
 LIGHT MODE
 Background : FFFFFF
