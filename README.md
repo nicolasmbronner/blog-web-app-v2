@@ -4,16 +4,16 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 # Colors (Hex Codes)
 ```
 DARK MODE
-Background : 141518
-Main Color : FFFFFF
-Sec. Color : AFAFAF
-Edit :       425DE1
-Delete :     E14942
+Background   141518
+Main Color   FFFFFF
+Sec. Color   AFAFAF
+Edit         425DE1
+Delete       E14942
 
 LIGHT MODE
-Background : FFFFFF
-Main Color : 000000
-Sec. Color : 515151
+Background   FFFFFF
+Main Color   000000
+Sec. Color   515151
 ```
 
 # Installation
