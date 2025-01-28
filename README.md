@@ -35,21 +35,52 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 
 ## Screenshots
 
+Login page:
 ![Imgur](https://i.imgur.com/YtxiwmV.png)
+
+Login page with input:
 ![Imgur](https://i.imgur.com/hHbb9on.png)
+
+Index page:
 ![Imgur](https://i.imgur.com/D78cFqG.png)
+
+Reading article page:
 ![Imgur](https://i.imgur.com/LFwWG6H.png)
-![Imgur](https://i.imgur.com/Lk9gbCT.png)
-![Imgur](https://i.imgur.com/1l8mg6p.png)
+
+Icons if someone is editing the page, and 3 people are reading the article:
 ![Imgur](https://i.imgur.com/uylWQFB.png)
+
+Tooltip when icon hovered or clicked:
+![Imgur](https://i.imgur.com/Lk9gbCT.png)
+
+Icon if article has being deleted while user is reading it:
+![Imgur](https://i.imgur.com/1l8mg6p.png)
+
+Artile deletion notification:
 ![Imgur](https://i.imgur.com/P9bb0C5.png)
+
+Article edition page:
 ![Imgur](https://i.imgur.com/6RfjLnb.png)
+
+Article edition canceled notification:
 ![Imgur](https://i.imgur.com/A41H8yh.png)
+
+New article page:
 ![Imgur](https://i.imgur.com/bqDZ0dn.png)
+
+New article canceled notification:
 ![Imgur](https://i.imgur.com/XKKXaT3.png)
+
+White theme
 ![Imgur](https://i.imgur.com/cMy6XVI.png)
+
+Tablet and Smartphone responsive design
 ![Imgur](https://i.imgur.com/N99VRAH.png)
+
+Touch device swipe right to edit article (from index page):
 ![Imgur](https://i.imgur.com/TN6eBXZ.png)
+
+Touch device swipe left to delete article (from index page):
 ![Imgur](https://i.imgur.com/jrevs4H.png)
 ![Imgur](https://i.imgur.com/gbb5JON.png)
 
