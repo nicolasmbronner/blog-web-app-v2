@@ -44,43 +44,45 @@ Login page with input:
 Index page:
 ![Imgur](https://i.imgur.com/D78cFqG.png)
 
-Reading article page:
+Article hovering with mouse, interaction icons (index page)
 ![Imgur](https://i.imgur.com/LFwWG6H.png)
 
-Icons if someone is editing the page, and 3 people are reading the article:
-![Imgur](https://i.imgur.com/uylWQFB.png)
-
-Tooltip when icon hovered or clicked:
+Article reading page
 ![Imgur](https://i.imgur.com/Lk9gbCT.png)
 
-Icon if article has being deleted while user is reading it:
-![Imgur](https://i.imgur.com/1l8mg6p.png)
-
-Artile deletion notification:
+Icons if someone is editing the article, and 3 people are reading it:
 ![Imgur](https://i.imgur.com/P9bb0C5.png)
 
-Article edition page:
+Tooltip when icon hovered or clicked:
+![Imgur](https://i.imgur.com/1l8mg6p.png)
+
+Icon if article has being deleted while user is reading it:
+![Imgur](https://i.imgur.com/uylWQFB.png)
+
+Deleted article notification:
 ![Imgur](https://i.imgur.com/6RfjLnb.png)
 
-Article edition canceled notification:
+Article edition page
 ![Imgur](https://i.imgur.com/A41H8yh.png)
 
-New article page:
+Canceled article edition notification
 ![Imgur](https://i.imgur.com/bqDZ0dn.png)
 
-New article canceled notification:
+New article page
 ![Imgur](https://i.imgur.com/XKKXaT3.png)
 
-White theme
+Canceled new article notification
 ![Imgur](https://i.imgur.com/cMy6XVI.png)
 
-Tablet and Smartphone responsive design
+White theme
 ![Imgur](https://i.imgur.com/N99VRAH.png)
 
-Touch device swipe right to edit article (from index page):
+Tablet and Smartphone responsive design
 ![Imgur](https://i.imgur.com/TN6eBXZ.png)
 
-Touch device swipe left to delete article (from index page):
+Touch device swipe right to edit article (from index page):
 ![Imgur](https://i.imgur.com/jrevs4H.png)
+
+Touch device swipe left to delete article (from index page):
 ![Imgur](https://i.imgur.com/gbb5JON.png)
 
