@@ -35,5 +35,21 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 
 ## Screenshots
 
-![App Screenshot](https://placehold.co/468x300)
+![Imgur](https://i.imgur.com/YtxiwmV.png)
+![Imgur](https://i.imgur.com/hHbb9on.png)
+![Imgur](https://i.imgur.com/D78cFqG.png)
+![Imgur](https://i.imgur.com/LFwWG6H.png)
+![Imgur](https://i.imgur.com/Lk9gbCT.png)
+![Imgur](https://i.imgur.com/1l8mg6p.png)
+![Imgur](https://i.imgur.com/uylWQFB.png)
+![Imgur](https://i.imgur.com/P9bb0C5.png)
+![Imgur](https://i.imgur.com/6RfjLnb.png)
+![Imgur](https://i.imgur.com/A41H8yh.png)
+![Imgur](https://i.imgur.com/bqDZ0dn.png)
+![Imgur](https://i.imgur.com/XKKXaT3.png)
+![Imgur](https://i.imgur.com/cMy6XVI.png)
+![Imgur](https://i.imgur.com/N99VRAH.png)
+![Imgur](https://i.imgur.com/TN6eBXZ.png)
+![Imgur](https://i.imgur.com/jrevs4H.png)
+![Imgur](https://i.imgur.com/gbb5JON.png)
 
