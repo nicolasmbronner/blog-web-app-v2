@@ -17,7 +17,7 @@ Note : Le serveur maintient l'état du blog tant qu'au moins un utilisateur rest
 
 ### Page d'accueil
 La page d'accueil présente une liste chronologique des articles, les plus récents apparaissant en premier. Chaque article affiche :
-- Sa date de création (passe au nom de l'auteur au survol/toucher)
+- Sa date de création (passe au nom de l'auteur au survol/toucher, en format de scroll horizontal automatique)
 - Son titre
 - Des indicateurs dynamiques :
   - Lecteurs actifs (icône animée)
@@ -25,13 +25,13 @@ La page d'accueil présente une liste chronologique des articles, les plus réce
 
 ### Interactions avec les articles
 #### Sur ordinateur
-- Survolez un article pour afficher les options d'édition et de suppression
+- Survolez un article pour afficher les options d'édition et de suppression (les icônes remplacent les indicateurs dynamiques si présents)
 - Cliquez sur le titre pour lire l'article
 
 #### Sur appareil tactile
 - Glissez vers la gauche pour supprimer
 - Glissez vers la droite pour éditer
-- Appui long sur le titre pour accéder aux options (5 secondes pour choisir une action)
+- Appui long sur le titre pour accéder aux options de suppression ou d'édition, apparaissant à côté du bouton de sélecteur de thème (5 secondes pour choisir une action)
 
 ## Gestion des articles
 ### Lecture
@@ -40,7 +40,7 @@ La page de lecture affiche :
 - Date de création
 - Nom de l'auteur
 - Contenu
-- Indicateurs en temps réel (lecteurs actifs, édition en cours)
+- Indicateurs en temps réel, à droite du titre (lecteurs actifs, édition en cours, lecture en tampon car article supprimé)
 - Options d'édition/suppression pour l'auteur
 - Bouton de retour à l'accueil
 
@@ -68,7 +68,8 @@ Accessible depuis la liste ou la lecture d'article :
 L'application offre une expérience en temps réel avec :
 - Indicateurs de présence des lecteurs
 - Notifications d'édition en cours
-- Mises à jour instantanées des modifications
+- Indicateur de lecture en cache, car l'article a été supprimé par son auteur
+- Mises à jour instantanées des modifications, sauf pour les lecteurs déjà sur la page, qui verront le texte grisé avec un indicateur que l'article a été modifié et a besoin d'être actualisé pour voir la dernière version de l'article
 - Système de notification pour les actions importantes
 
 ## Accessibilité
