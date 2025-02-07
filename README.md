@@ -36,7 +36,7 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 ## Screenshots
 
 Login page:
-![Imgur](https://i.imgur.com/YtxiwmV.png)
+![Imgur](https://i.imgur.com/9tFE16T.png)
 
 Login page with input:
 ![Imgur](https://i.imgur.com/hHbb9on.png)
