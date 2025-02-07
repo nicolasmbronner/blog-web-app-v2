@@ -100,7 +100,7 @@ L'interface s'adapte aux différents appareils :
 - `/articles/:id` : Supprime un article (requiert être l'auteur)
 
 ### Note
-Les articles sont stockés dans un tableau d'objets dans `index.js`, servant de base de données en mémoire.
+Les articles sont stockés dans un tableau d'objets dans `index.js`, servant de base de données en mémoire. les articles sont gérés directements dans ce tableau d'objets.
 
 # Pages à créer
 - Page de login
