@@ -29,6 +29,7 @@ La page d'accueil présente une liste chronologique des articles, les plus réce
 ##### Sur appareil tactile
 - Glissez vers la gauche pour supprimer (pour l'auteur uniquement)
 - Glissez vers la droite pour éditer (pour l'auteur uniquement)
+- Appui long sur le titre pour voir apparaitre les icônes d'édition et de suppression d'article (pas de menu clic droit)
 - Appui simple sur le titre pour lire l'article
 
 ### Gestion des articles
