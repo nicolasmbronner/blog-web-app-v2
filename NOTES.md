@@ -38,6 +38,10 @@ La page de lecture affiche :
 - Date de création
 - Nom de l'auteur
 - Contenu
+- Ligne d'état en bas de l'article (en gris clair) :
+  - Si article jamais modifié : aucune ligne n'apparaît
+  - Si article modifié : "Dernière modification le [date]"
+  - Si article supprimé : "Cet article a été supprimé le [date]"
 - Options d'édition/suppression pour l'auteur
 - Bouton de retour à l'accueil
 
