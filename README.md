@@ -48,7 +48,7 @@ Article hovering with mouse, interaction icons (index page)
 ![Imgur](https://i.imgur.com/LFwWG6H.png)
 
 Article reading page
-![Imgur](https://i.imgur.com/Lk9gbCT.png)
+![Imgur](https://i.imgur.com/x04QIjJ.png)
 
 Deleted article notification:
 ![Imgur](https://i.imgur.com/6RfjLnb.png)
