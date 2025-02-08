@@ -50,15 +50,6 @@ Article hovering with mouse, interaction icons (index page)
 Article reading page
 ![Imgur](https://i.imgur.com/Lk9gbCT.png)
 
-Icons if someone is editing the article, and 3 people are reading it:
-![Imgur](https://i.imgur.com/P9bb0C5.png)
-
-Tooltip when icon hovered or clicked:
-![Imgur](https://i.imgur.com/1l8mg6p.png)
-
-Icon if article has being deleted while user is reading it:
-![Imgur](https://i.imgur.com/uylWQFB.png)
-
 Deleted article notification:
 ![Imgur](https://i.imgur.com/6RfjLnb.png)
 
