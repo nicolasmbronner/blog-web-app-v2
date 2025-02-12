@@ -1,35 +1,35 @@
-# Architecture du Projet
+# Project Architecture
 
-### Structure Détaillée
+### Detailed Structure
 ```bash
 blog-web-app-v2/
 ├── src/
 │   ├── services/
-│   │   └── articleService.js    # Gestion des articles (CRUD)
+│   │   └── articleService.js    # Articles management (CRUD)
 │   └── utils/
-│       └── dateFormatter.js     # Formatage des dates
+│       └── dateFormatter.js     # Date formatting utilities
 ├── tests/
-│   ├── services/               # Tests des services
-│   └── utils/                  # Tests des utilitaires
+│   ├── services/               # Services tests
+│   └── utils/                  # Utilities tests
 ├── public/
-│   ├── css/                    # Styles et thèmes
-│   └── js/                     # Scripts côté client
+│   ├── css/                    # Styles and themes
+│   └── js/                     # Client-side scripts
 ├── views/
-│   ├── partials/               # Composants EJS réutilisables
-│   └── pages/                  # Pages principales EJS
-└── docs/                       # Documentation technique
+│   ├── partials/               # Reusable EJS components
+│   └── pages/                  # Main EJS pages
+└── docs/                       # Technical documentation
 ```
 
-### Journal des Modifications
-- [12/02/2024] : Structure initiale du projet
-- [12/02/2024] : Séparation des articles dans articleService.js
-- [Date] : [Future modification]
+### Changelog
+- [12/02/2024] : Initial project structure
+- [12/02/2024] : Moved articles to articleService.js
+- [Date] : [Future changes]
 
-### Organisation du Code
-- **Services (src/services/)**: Contient la logique métier
-  - `articleService.js`: Gestion du CRUD des articles
-- **Utils (src/utils/)**: Fonctions utilitaires réutilisables
-  - `dateFormatter.js`: Formatage des dates pour l'affichage
-- **Vues (views/)**: Templates EJS pour le rendu
-  - `partials/`: Composants réutilisables (header, footer)
-  - `pages/`: Pages principales de l'application
+### Code Organization
+- **Services (src/services/)**: Contains business logic
+  - `articleService.js`: Articles CRUD operations
+- **Utils (src/utils/)**: Reusable utility functions
+  - `dateFormatter.js`: Date formatting for display
+- **Views (views/)**: EJS templates for rendering
+  - `partials/`: Reusable components (header, footer)
+  - `pages/`: Main application pages

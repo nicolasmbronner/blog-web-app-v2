@@ -2,20 +2,23 @@
 A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
 
 ## Project Structure
+# blog-web-app-v2
+A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
+
+## Project Structure
 ```bash
 blog-web-app-v2/
-├── src/              # Code source principal
-│   ├── services/     # Logique métier
-│   └── utils/        # Fonctions utilitaires
-├── tests/            # Tests unitaires
-├── public/           # Fichiers statiques
+├── src/              # Main source code
+│   ├── services/     # Business logic
+│   └── utils/        # Utility functions
+├── tests/            # Unit tests
+├── public/           # Static files
 │   ├── css/         
 │   └── js/          
-├── views/            # Templates EJS
-│   ├── partials/     # Composants réutilisables
-│   └── pages/        # Pages principales
-└── docs/             # Documentation détaillée
-```
+├── views/            # EJS templates
+│   ├── partials/     # Reusable components
+│   └── pages/        # Main pages
+└── docs/             # Detailed documentation
 
 ## Features
 
