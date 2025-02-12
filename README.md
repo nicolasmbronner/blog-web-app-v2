@@ -1,15 +1,30 @@
 # blog-web-app-v2
 A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
 
-## Author
+## Project Structure
+```bash
+blog-web-app-v2/
+├── src/              # Code source principal
+│   ├── services/     # Logique métier
+│   └── utils/        # Fonctions utilitaires
+├── tests/            # Tests unitaires
+├── public/           # Fichiers statiques
+│   ├── css/         
+│   └── js/          
+├── views/            # Templates EJS
+│   ├── partials/     # Composants réutilisables
+│   └── pages/        # Pages principales
+└── docs/             # Documentation détaillée
+```
 
-- [@nicolasmbronner](https://github.com/nicolasmbronner)
+## Features
 
+- Read articles
+- Create, Edit, Delete your articles
+- Light/dark mode toggle
+- Realtime feedbacks
+- Cross platform
 
-## License
-
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ## Color Reference
 
 | Color             | Hex                                                                |
@@ -22,16 +37,6 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 | Secondary C.Light | ![#515151](https://placehold.co/10/515151/515151) #515151 |
 | Edit Color | ![#425DE1](https://placehold.co/10/425DE1/425DE1) #425DE1 |
 | Delete Color | ![#E14942](https://placehold.co/10/E14942/E14942) #E14942 | 
-
-
-## Features
-
-- Read articles
-- Create, Edit, Delete your articles
-- Light/dark mode toggle
-- Realtime feedbacks
-- Cross platform
-
 
 ## Screenshots
 
@@ -77,3 +82,10 @@ Touch device swipe right to edit article (from index page):
 Touch device swipe left to delete article (from index page):
 ![Imgur](https://i.imgur.com/gbb5JON.png)
 
+## Author
+
+- [@nicolasmbronner](https://github.com/nicolasmbronner)
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
