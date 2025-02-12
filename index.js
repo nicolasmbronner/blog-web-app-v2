@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { staticArticles, articles } from './articles.js';
+import { staticArticles, articles } from './src/services/articles.js';
 
 const app = express();
 const port = 3000;

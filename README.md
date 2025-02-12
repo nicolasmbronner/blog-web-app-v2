@@ -9,7 +9,7 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 ```bash
 blog-web-app-v2/
 ├── src/              # Main source code
-│   ├── services/     # Business logic
+│   ├── services/     # Business logic (CRUD)
 │   └── utils/        # Utility functions
 ├── tests/            # Unit tests
 ├── public/           # Static files
