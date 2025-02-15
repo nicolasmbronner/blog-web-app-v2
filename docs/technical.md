@@ -4,20 +4,43 @@
 ```bash
 blog-web-app-v2/
 ├── src/
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   └── articles.routes.js
+│   ├── data/
+│   │   └── articlesStore.js     # "Base de données" en mémoire
 │   ├── services/
-│   │   └── articleService.js    # Articles management (CRUD)
-│   └── utils/
-│       └── dateFormatter.js     # Date formatting utilities
+│   │   └── articleService.js    # Logique métier des articles (CRUD)
+│   ├── utils/
+│   │   └── dateFormatter.js     # Formatage des dates
+│   └── middleware/
+│       └── auth.js              # Middleware d'authentification
 ├── tests/
-│   ├── services/               # Services tests
-│   └── utils/                  # Utilities tests
+│   ├── routes/
+│   │   └── articles.routes.test.js
+│   ├── services/
+│   │   └── articleService.test.js
+│   └── utils/
+│       └── dateFormatter.test.js
 ├── public/
-│   ├── css/                    # Styles and themes
-│   └── js/                     # Client-side scripts
+│   ├── css/
+│   │   └── styles.css          # Styles et thèmes
+│   └── js/
+│       └── main.js             # Scripts côté client
 ├── views/
-│   ├── partials/               # Reusable EJS components
-│   └── pages/                  # Main EJS pages
-└── docs/                       # Technical documentation
+│   ├── partials/
+│   │   ├── header.ejs
+│   │   └── footer.ejs
+│   └── pages/
+│       ├── login.ejs
+│       ├── index.ejs
+│       ├── article.ejs
+│       ├── edit.ejs
+│       ├── new.ejs
+│       └── 404.ejs
+├── docs/                       # Documentation technique
+├── index.js                    # Point d'entrée de l'application
+└── package.json
 ```
 
 ### Changelog
