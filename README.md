@@ -9,8 +9,11 @@ A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-
 ```bash
 blog-web-app-v2/
 ├── src/              # Main source code
+│   ├── routes/       # Route handlers
+│   ├── data/         # In-memory data store
 │   ├── services/     # Business logic (CRUD)
-│   └── utils/        # Utility functions
+│   ├── utils/        # Utility functions
+│   └── middleware/   # Authentication & other middlewares
 ├── tests/            # Unit tests
 ├── public/           # Static files
 │   ├── css/         
@@ -18,7 +21,8 @@ blog-web-app-v2/
 ├── views/            # EJS templates
 │   ├── partials/     # Reusable components
 │   └── pages/        # Main pages
-└── docs/             # Detailed documentation
+├── docs/             # Technical documentation
+└── index.js          # Application entry point
 ```
 
 ## Features
