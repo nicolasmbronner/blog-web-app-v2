@@ -19,6 +19,7 @@ blog-web-app-v2/
 │   ├── partials/     # Reusable components
 │   └── pages/        # Main pages
 └── docs/             # Detailed documentation
+```
 
 ## Features
 
