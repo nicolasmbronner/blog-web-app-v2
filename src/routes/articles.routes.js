@@ -1,5 +1,9 @@
-import express from 'express';
 import { staticArticles, articles } from '../data/articlesStore.js';
+
+// Refactor, similar code :
+// - GET : showEditArticleForm, getArticle
+// - PUT : updateArticle
+// - DELETE : deleteArticle
 
 
 
@@ -20,7 +24,18 @@ export function showNewArticleForm(req, res) {
 }
 
 export function showEditArticleForm(req, res) {
-    res.send('<h1>Edit Article Form</h1>');
+    const articleId = Number(req.params.id);
+    const article = staticArticles.find(article => article.id === articleId);
+
+    if (!article) {
+        return res.status(404).send('<h1>Article not found</h1>');
+    }
+
+    res.send(
+        `<h1>Edit : ${article.title}</h1>
+        <p>${article.creationDate}</p>
+        <p>${article.content}</p>`
+    );
 }
 
 export function getArticle(req, res) {
@@ -51,7 +66,14 @@ export function createArticle(req, res) {
 // PUT
 
 export function updateArticle(req, res) {
-    res.send('<h1>Article Updated</h1>');
+    const articleId = Number(req.params.id);
+    const article = staticArticles.find(article => article.id === articleId);
+
+    if (!article) {
+        return res.status(404).send('<h1>Article not found</h1>');
+    }
+
+    res.send(`<h1>Article ${articleId} Updated</h1>`);
 }
 
 
@@ -59,5 +81,12 @@ export function updateArticle(req, res) {
 // DELETE
 
 export function deleteArticle(req, res) {
-    res.send('<h1>Article Deleted</h1>');
+    const articleId = Number(req.params.id);
+    const article = staticArticles.find(article => article.id === articleId);
+
+    if (!article) {
+        return res.status(404).send('<h1>Article not found</h1>');
+    }
+
+    res.send(`<h1>Article ${articleId} Deleted</h1>`);
 }
