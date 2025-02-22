@@ -1,14 +1,30 @@
+// =====================================
+// Imports
+// =====================================
+// Using both staticArticles (demo data) and articles
+// (for future dynamic contents)
 import { staticArticles, articles } from '../data/articlesStore.js';
 
-// Refactor, similar code :
-// - GET : showEditArticleForm, getArticle
-// - PUT : updateArticle
-// - DELETE : deleteArticle
+
+// =====================================
+// Utility Functions
+// =====================================
+// These functions are kept here rather than in utils/ because they
+// are specific to article route handling and won't be reused
+// elsewhere in the application
+function getArticleById(id) {
+    const articleID = Number(id);
+    return staticArticles.find(article => article.id === articleID);
+}
+
+function handleArticleNotFound(res) {
+    return res.status(404).send('<h1>Article not found</h1>');
+}
 
 
-
-// GET
-
+// =====================================
+// GET Routes
+// =====================================
 export function listArticles(req, res) {
     let htmlContent = '';
 
@@ -23,13 +39,12 @@ export function showNewArticleForm(req, res) {
     res.send('<h1>New Article Form</h1>');
 }
 
+// While currently similar to other article-handling functions,
+// (getArticle, updateArticle, deleteArticle), update logic will
+// diverge once we implement proper article modification
 export function showEditArticleForm(req, res) {
-    const articleId = Number(req.params.id);
-    const article = staticArticles.find(article => article.id === articleId);
-
-    if (!article) {
-        return res.status(404).send('<h1>Article not found</h1>');
-    }
+    const article = getArticleById(req.params.id);
+    if (!article) return handleArticleNotFound(res);
 
     res.send(
         `<h1>Edit : ${article.title}</h1>
@@ -39,12 +54,8 @@ export function showEditArticleForm(req, res) {
 }
 
 export function getArticle(req, res) {
-    const articleId = Number(req.params.id);
-    const article = staticArticles.find(article => article.id === articleId);
-
-    if (!article) {
-        return res.status(404).send('<h1>Article not found</h1>');
-    }
+    const article = getArticleById(req.params.id);
+    if (!article) return handleArticleNotFound(res);
 
     res.send(
         `<h1>${article.title}</h1>
@@ -54,39 +65,31 @@ export function getArticle(req, res) {
 }
 
 
-
-// POST
-
+// =====================================
+// POST Routes
+// =====================================
 export function createArticle(req, res) {
     res.send('<h1>New Article Created</h1>');
 }
 
 
-
-// PUT
-
+// =====================================
+// PUT Routes
+// =====================================
 export function updateArticle(req, res) {
-    const articleId = Number(req.params.id);
-    const article = staticArticles.find(article => article.id === articleId);
+    const article = getArticleById(req.params.id);
+    if (!article) return handleArticleNotFound(res);
 
-    if (!article) {
-        return res.status(404).send('<h1>Article not found</h1>');
-    }
-
-    res.send(`<h1>Article ${articleId} Updated</h1>`);
+    res.send(`<h1>Article ${article.id} Updated</h1>`);
 }
 
 
-
-// DELETE
-
+// =====================================
+// DELETE Routes
+// =====================================
 export function deleteArticle(req, res) {
-    const articleId = Number(req.params.id);
-    const article = staticArticles.find(article => article.id === articleId);
+    const article = getArticleById(req.params.id);
+    if (!article) return handleArticleNotFound(res);
 
-    if (!article) {
-        return res.status(404).send('<h1>Article not found</h1>');
-    }
-
-    res.send(`<h1>Article ${articleId} Deleted</h1>`);
+    res.send(`<h1>Article ${article.id} Deleted</h1>`);
 }

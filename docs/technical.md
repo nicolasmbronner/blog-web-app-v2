@@ -24,23 +24,25 @@ blog-web-app-v2/
 │       └── dateFormatter.test.js
 ├── public/
 │   ├── css/
-│   │   └── styles.css         # Themes and styles
+│   │   └── styles.css          # Themes and styles
 │   └── js/
-│       └── main.js            # Client-side JavaScript
+│       └── main.js             # Client-side JavaScript
 ├── views/
 │   ├── partials/
-│   │   ├── header.ejs         # Reusable header with theme toggle
-│   │   └── footer.ejs         # Reusable footer
+│   │   ├── header.ejs          # Reusable header with theme toggle
+│   │   └── footer.ejs          # Reusable footer
 │   └── pages/
-│       ├── login.ejs          # Login page
-│       ├── index.ejs          # Articles list page
-│       ├── article.ejs        # Article reading page
-│       ├── edit.ejs          # Article editing page
-│       ├── new.ejs           # New article page
-│       └── 404.ejs           # Error page
-├── docs/                      # Technical documentation
-├── index.js                   # Application entry point
-└── package.json              # Project dependencies and scripts
+│       ├── login.ejs           # Login page
+│       ├── index.ejs           # Articles list page
+│       ├── article.ejs         # Article reading page
+│       ├── edit.ejs            # Article editing page
+│       ├── new.ejs             # New article page
+│       └── 404.ejs             # Error page
+├── docs/                       # Technical documentation
+│   └── planification.md
+│   └── technical.md
+├── index.js                    # Application entry point
+└── package.json                # Project dependencies and scripts
 ```
 
 ### Changelog
