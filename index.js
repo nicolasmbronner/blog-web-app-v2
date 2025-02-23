@@ -5,16 +5,9 @@ import express            from 'express';
 import bodyParser         from 'body-parser';
 import { WebSocketServer} from 'ws';
 import { createServer }   from 'http';
-import { fileURLToPath }  from 'url';
-import { dirname }        from 'path';
-import path               from 'path';
 
 import { showLogin }      from './src/routes/auth.routes.js';
 import * as articleRoutes from './src/routes/articles.routes.js';
-
-// Get current directory
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 
 // =====================================
@@ -29,7 +22,7 @@ const server = createServer(app);
 // Create WebSocket server
 const wss = new WebSocketServer({ server });
 
-// Keep track of connected users
+// Keep track of connected users to the server
 let connectedUsers = 0;
 
 // WebSocket connection handling
@@ -38,15 +31,15 @@ wss.on('connection', (ws) => {
     connectedUsers++;
     console.log(`New user connected! Current users: ${connectedUsers}`);
 
-    // Handle disconnection
+    // Handle disconnection and decrement counter
     ws.on('close', () => {
         connectedUsers--;
         console.log(`User disconnected. Current users: ${connectedUsers}`);
 
-        // Check if no users left
+        // Check if no users left and reset blog
         if (connectedUsers === 0) {
             console.log(`No users left. Blog resetting to default state...`);
-            // Future implementation: reset blog state
+            // TODO : Implement blog reset
         }
     });
 });
@@ -56,9 +49,12 @@ wss.on('connection', (ws) => {
 // Middleware
 // =====================================
 // Serve static files (CSS, JS, images) from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// Configure view engine
+app.set('view engine', 'ejs');
 
 
 // =====================================

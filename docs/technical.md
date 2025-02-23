@@ -46,6 +46,7 @@ blog-web-app-v2/
 ```
 
 ### Changelog
+- [21/02/2024] : WebSocket login/logout manager, EJS & stylesheet basics, statics loading
 - [15/02/2024] : Project structure and files (empty) created
 - [15/02/2024] : Added routes, data store, and middleware architecture
 - [12/02/2024] : Project starting day
