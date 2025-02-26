@@ -1,11 +1,27 @@
 # blog-web-app-v2
+
 A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
 
-## Project Structure
-# blog-web-app-v2
-A blog web app demo, created with EJS, CSS and JavaScript, Node.js for the back-end. No database.
+## 🚀 Getting Started
 
-## Project Structure
+```bash
+# Clone the repository
+git clone https://github.com/nicolasmbronner/blog-web-app-v2.git
+
+# Navigate to the project directory
+cd blog-web-app-v2
+
+# Install dependencies
+npm i
+
+# Start the server
+node index.js
+```
+
+Visit `http://localhost:3000` in your browser to access the blog.
+
+## 📂 Project Structure
+
 ```bash
 blog-web-app-v2/
 ├── src/              # Main source code
@@ -25,7 +41,14 @@ blog-web-app-v2/
 └── index.js          # Application entry point
 ```
 
-## Features
+## 📚 Documentation
+
+- [Roadmap](ROADMAP.md) - Development plan and future features
+- [Technical Architecture](docs/TECHNICAL.md) - Detailed code structure and organization
+- [User Guide](docs/USER_GUIDE.md) - Usage instructions and features explanation
+- [Changelog](CHANGELOG.md) - Version history and updates
+
+## ✨ Features
 
 - Read articles
 - Create, Edit, Delete your articles
@@ -33,7 +56,7 @@ blog-web-app-v2/
 - Realtime feedbacks
 - Cross platform
 
-## Color Reference
+## 🎨 Color Reference
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -46,7 +69,7 @@ blog-web-app-v2/
 | Edit Color | ![#425DE1](https://placehold.co/10/425DE1/425DE1) #425DE1 |
 | Delete Color | ![#E14942](https://placehold.co/10/E14942/E14942) #E14942 | 
 
-## Screenshots
+## 📸 Screenshots
 
 Login page:
 ![Imgur](https://i.imgur.com/9tFE16T.png)
@@ -90,10 +113,10 @@ Touch device swipe right to edit article (from index page):
 Touch device swipe left to delete article (from index page):
 ![Imgur](https://i.imgur.com/gbb5JON.png)
 
-## Author
+## 👨‍💻 Author
 
 - [@nicolasmbronner](https://github.com/nicolasmbronner)
 
-## License
+## 📄 License
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)

@@ -4,6 +4,7 @@
 // Using both staticArticles (demo data) and articles
 // (for future dynamic contents)
 import { staticArticles, articles } from '../data/articlesStore.js';
+import * as articleService from '../services/articleService.js';
 
 
 // =====================================
@@ -12,11 +13,6 @@ import { staticArticles, articles } from '../data/articlesStore.js';
 // These functions are kept here rather than in utils/ because they
 // are specific to article route handling and won't be reused
 // elsewhere in the application
-function getArticleById(id) {
-    const articleID = Number(id);
-    return staticArticles.find(article => article.id === articleID);
-}
-
 function handleArticleNotFound(res) {
     return res.status(404).send('<h1>Article not found</h1>');
 }
@@ -43,7 +39,7 @@ export function showNewArticleForm(req, res) {
 // (getArticle, updateArticle, deleteArticle), update logic will
 // diverge once we implement proper article modification
 export function showEditArticleForm(req, res) {
-    const article = getArticleById(req.params.id);
+    const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
     res.send(
@@ -54,7 +50,7 @@ export function showEditArticleForm(req, res) {
 }
 
 export function getArticle(req, res) {
-    const article = getArticleById(req.params.id);
+    const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
     res.send(
@@ -77,7 +73,7 @@ export function createArticle(req, res) {
 // PUT Routes
 // =====================================
 export function updateArticle(req, res) {
-    const article = getArticleById(req.params.id);
+    const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
     res.send(`<h1>Article ${article.id} Updated</h1>`);
@@ -88,7 +84,7 @@ export function updateArticle(req, res) {
 // DELETE Routes
 // =====================================
 export function deleteArticle(req, res) {
-    const article = getArticleById(req.params.id);
+    const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
     res.send(`<h1>Article ${article.id} Deleted</h1>`);

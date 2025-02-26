@@ -17,10 +17,41 @@ Convention de notation :
 ## [Unreleased]
 
 ### Added
+- Reorganization of project documentation
+- Creation of ROADMAP.md to track development progress
+- Implementation of article service layer
+
+## [0.3.0] - 2024-02-21
+
+### Added
+- WebSocket login/logout manager implementation
+- User connection tracking system
+- Blog reset functionality when last user disconnects
+- Basic EJS templates structure
+- Basic stylesheet implementation
+- Static assets loading configuration
+
+## [0.2.0] - 2024-02-15
+
+### Added
+- Complete project structure following MVC pattern
+- Empty files created for all planned modules
+- Route handlers for article management (CRUD operations)
+- In-memory data store for articles
+- Authentication routes structure
+- Middleware architecture
+
+### Changed
+- Reorganized project according to documented structure
+
+## [0.1.0] - 2024-02-12
+
+### Added
 - Initial project setup
+- Express.js server configuration
 - MIT License implementation for open-source distribution
 - Project documentation structure (README.md)
+- Package.json with initial dependencies
 
 ### Notes
 - This is the initialization of version 2, building upon blog-web-app-v1
-- Full changelog will begin with first functional release
