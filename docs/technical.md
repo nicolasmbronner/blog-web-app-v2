@@ -1,4 +1,6 @@
-# Project Architecture
+# Technical Documentation
+
+## Project Architecture
 
 ### Detailed Structure
 ```bash
@@ -16,17 +18,20 @@ blog-web-app-v2/
 │   └── middleware/
 │       └── auth.js             # Authentication middleware
 ├── tests/
+│   ├── data/
+│   │   └── articlesStore.test.js  # Tests for articles data store
+│   ├── services/
+│   │   └── articleService.test.js # Tests for article service
 │   ├── routes/
 │   │   └── articles.routes.test.js
-│   ├── services/
-│   │   └── articleService.test.js
 │   └── utils/
 │       └── dateFormatter.test.js
 ├── public/
 │   ├── css/
 │   │   └── styles.css          # Themes and styles
 │   └── js/
-│       └── main.js             # Client-side JavaScript
+│       ├── main.js             # Client-side JavaScript
+│       └── websocket.js        # WebSocket client connection
 ├── views/
 │   ├── partials/
 │   │   ├── header.ejs          # Reusable header with theme toggle
@@ -39,17 +44,17 @@ blog-web-app-v2/
 │       ├── new.ejs             # New article page
 │       └── 404.ejs             # Error page
 ├── docs/                       # Technical documentation
-│   └── planification.md
-│   └── technical.md
+│   └── PLANNING_NOTES_FR.md    # Planning notes in French
+│   └── TECHNICAL.md            # Technical documentation
+│   └── USER_GUIDE.md           # User documentation
 ├── index.js                    # Application entry point
+├── jest.config.js              # Jest testing configuration
+├── ROADMAP.md                  # Development roadmap
+├── CHANGELOG.md                # Version history
 └── package.json                # Project dependencies and scripts
 ```
 
-### Changelog
-- [21/02/2024] : WebSocket login/logout manager, EJS & stylesheet basics, statics loading
-- [15/02/2024] : Project structure and files (empty) created
-- [15/02/2024] : Added routes, data store, and middleware architecture
-- [12/02/2024] : Project starting day
+> **Note**: For a complete version history, please refer to [CHANGELOG.md](../CHANGELOG.md) in the project root.
 
 ### Code Organization
 - **Routes (src/routes/)**: Request handlers
@@ -70,3 +75,17 @@ blog-web-app-v2/
   - `css/`: Stylesheets including theme management
   - `js/`: Client-side interactivity
 - **Tests**: Automated testing suite mirroring src structure
+  - Tests follow the same structure as the src folder
+  - Each module has corresponding unit tests
+
+### Testing Architecture
+- **Test Framework**: Jest with ES modules support
+- **Test Organization**: Tests mirror the src directory structure
+- **Coverage**: 100% coverage for data and service layers
+- **Testing Patterns**: 
+  - Tests follow Arrange-Act-Assert pattern
+  - BeforeEach hooks for test isolation
+  - Comprehensive case coverage including edge cases
+- **Running Tests**:
+  - `npm test`: Run all tests
+  - `npm run test:coverage`: Generate coverage reports

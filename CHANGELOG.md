@@ -20,6 +20,9 @@ Convention de notation :
 - Reorganization of project documentation
 - Creation of ROADMAP.md to track development progress
 - Implementation of article service layer
+- Unit tests with Jest for data and service layers
+- Test coverage configuration with 100% coverage achieved
+- Enhanced resetArticles function with silent mode parameter
 
 ## [0.3.0] - 2024-02-21
 

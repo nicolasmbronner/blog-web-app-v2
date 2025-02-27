@@ -27,9 +27,9 @@ const DEFAULT_ARTICLES = [
 export let articles = [...DEFAULT_ARTICLES];
 
 // Function to reset articles to their default state
-export function resetArticles() {
+export function resetArticles(silent = false) {
     articles = [...DEFAULT_ARTICLES];
-    console.log("Articles reset to default state");
+    if (!silent) console.log("Articles reset to default state");
     return articles;
 }
 

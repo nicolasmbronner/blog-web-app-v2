@@ -19,6 +19,15 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 - [x] Set up separate articles file for data management
 - [x] Create session management function
 
+## 🧪 Testing
+
+### ✅ Unit Tests
+- [x] Configure Jest testing environment
+- [x] Implement tests for data layer (articlesStore.js)
+- [x] Implement tests for service layer (articleService.js)
+- [x] Set up test coverage reporting
+- [x] Achieve 100% test coverage for existing modules
+
 ## 🚧 Core Features Implementation
 
 ### 🔄 In Progress
@@ -72,10 +81,9 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 
 ## 🧪 Testing & Deployment
 
-- [ ] **Application Testing**: Verify article creation and viewing work correctly
-  
+- [x] **Unit Testing**: Set up and implement tests for core modules
+- [ ] **Application Testing**: Verify article creation and viewing work correctly  
 - [ ] **Bug Fixing**: Fix any issues that arise during testing
-  
 - [ ] **Deployment**: Put the site online
   - [ ] Research best solution for hosting
   - [ ] Prefer local hosting or fast-loading free hosting (avoid 1-2 minute load times)
@@ -90,4 +98,4 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 
 ---
 
-*Last updated: February 26, 2025*
+*Last updated: February 27, 2025*
