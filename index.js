@@ -2,6 +2,7 @@
 // Imports
 // =====================================
 import express            from 'express';
+import device             from 'express-device';
 import bodyParser         from 'body-parser';
 import { WebSocketServer} from 'ws';
 import { createServer }   from 'http';
@@ -55,6 +56,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Configure view engine
 app.set('view engine', 'ejs');
+
+// Configure device detection middleware
+app.use(device.capture());
 
 
 // =====================================

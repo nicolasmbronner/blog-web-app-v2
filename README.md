@@ -51,6 +51,7 @@ blog-web-app-v2/
 ## ✨ Features
 
 - Read articles
+- Adaptable date formats to display
 - Create, Edit, Delete your articles
 - Light/dark mode toggle
 - Realtime feedbacks

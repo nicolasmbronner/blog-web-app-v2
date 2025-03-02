@@ -5,6 +5,7 @@
 // (for future dynamic contents)
 import { staticArticles, articles } from '../data/articlesStore.js';
 import * as articleService from '../services/articleService.js';
+import dateFormatter from '../utils/dateFormatter.js';
 
 
 // =====================================
@@ -22,13 +23,25 @@ function handleArticleNotFound(res) {
 // GET Routes
 // =====================================
 export function listArticles(req, res) {
-    let htmlContent = '';
+    // req.device.type will be 'phone', 'tablet', 'desktop', etc.
+    const deviceType = req.device.type;
 
-    for (const article of staticArticles) {
-        htmlContent += `<p>${article.creationDate} | ${article.title}</p>`;
-    }
-
-    res.send(htmlContent);
+    // Create a copy of articles with formatted dates
+    const formattedArticles = articles.map(article => {
+        // Create a copy of the article for not modify the original
+        return {
+            ...article,
+            // Format creation date for list view
+            formattedDate: dateFormatter.formatForList(
+                article.creationDate,
+                deviceType === 'phone' // true only for smartphones
+            )
+        };
+    });
+    res.render('pages/index.ejs', {
+         articles: formattedArticles,
+         deviceType
+    });
 }
 
 export function showNewArticleForm(req, res) {
@@ -53,11 +66,13 @@ export function getArticle(req, res) {
     const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
-    res.send(
-        `<h1>${article.title}</h1>
-        <p>${article.creationDate}</p>
-        <p>${article.content}</p>`
-    );
+    // Create a copy of the article with formatted date for display
+    const formattedArticle = {
+        ...article,
+        formattedDate: dateFormatter.formatForArticle(article.creationDate)
+    }
+
+    res.render('pages/article.ejs', { article: formattedArticle });
 }
 
 

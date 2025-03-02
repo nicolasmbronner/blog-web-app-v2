@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<main>
+    <h1>Index Page</h1>
+
+    <% if (locals.articles) { %>
+        <% articles.forEach(article => { %>
+            <p><%= `${article.formattedDate} | ${article.title}` %></p>
+        <% }); %>
+    <% } %>
+</main>
+
+<%- include('../partials/footer') %>

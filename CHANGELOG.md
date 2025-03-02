@@ -17,6 +17,9 @@ Convention de notation :
 ## [Unreleased]
 
 ### Added
+- Implementation of adaptive date formatting for articles
+- Integration of dateFormatter utility in article views
+- Device detection for responsive date display formats
 - Reorganization of project documentation
 - Creation of ROADMAP.md to track development progress
 - Implementation of article service layer

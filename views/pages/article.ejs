@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<main>
+    <% if (locals.article) { %>
+        <h1><%= article.title %> </h1>
+        <p><%= article.formattedDate %></p>
+        <p><%= article.content %></p>
+    <% } %>
+</main>
+
+<%- include('../partials/footer') %>

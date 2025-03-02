@@ -65,7 +65,11 @@ blog-web-app-v2/
 - **Services (src/services/)**: Contains business logic
   - `articleService.js`: Articles CRUD operations
 - **Utils (src/utils/)**: Reusable utility functions
-  - `dateFormatter.js`: Date formatting for display
+  - `dateFormatter.js`: Context-aware date formatting utility that adapts display based on:
+    - Display context (article list vs detailed page)
+    - Device type (compact formatting for mobile)
+    - Temporal context (today, current year, past years)
+    - Used by article routes to standardize date presentation
 - **Middleware (src/middleware/)**: Request processors
   - `auth.js`: Authentication and authorization checks
 - **Views (views/)**: EJS templates for rendering

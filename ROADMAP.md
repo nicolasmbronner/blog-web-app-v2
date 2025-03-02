@@ -30,15 +30,20 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 
 ## 🚧 Core Features Implementation
 
-### 🔄 In Progress
-- [ ] Implement date formatting function that adapts to the device
+### ✅ Recently Completed
+- [x] Implement date formatting function that adapts to the device
+  - [x] Context-aware formatting (list vs article page)
+  - [x] Device-responsive display (desktop/mobile)
+  - [x] Time-sensitive formats (today, current year, past years)
+  - [x] Integration with article routes and EJS templates
 
-### 📋 Planned (Backlog)
+### 🔄 In Progress
 - [ ] **Blog Index Page**: Implement home page showing all available articles
   - [ ] Add navigation and article interaction buttons
   - [ ] Set up 6 pre-existing articles for blog reset
   - [ ] Create 404 page for non-existent articles (already deleted by another user)
-  
+
+### 📋 Planned (Backlog)
 - [ ] **Article Viewing**: Implement functionality to display articles on their own page
   - [ ] Add navigation and article interaction buttons
   
