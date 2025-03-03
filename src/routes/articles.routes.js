@@ -4,8 +4,8 @@
 // Using both staticArticles (demo data) and articles
 // (for future dynamic contents)
 import { staticArticles, articles } from '../data/articlesStore.js';
-import * as articleService from '../services/articleService.js';
-import dateFormatter from '../utils/dateFormatter.js';
+import * as articleService          from '../services/articleService.js';
+import dateFormatter                from '../utils/dateFormatter.js';
 
 
 // =====================================
