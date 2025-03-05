@@ -35,7 +35,9 @@ blog-web-app-v2/
 ├── views/
 │   ├── partials/
 │   │   ├── header.ejs          # Reusable header with theme toggle
-│   │   └── footer.ejs          # Reusable footer
+│   │   ├── footer.ejs          # Reusable footer
+│   │   ├── menu.ejs            # Contextual navigation menu
+│   │   └── article-item.ejs    # Article list item template
 │   └── pages/
 │       ├── login.ejs           # Login page
 │       ├── index.ejs           # Articles list page
@@ -73,7 +75,11 @@ blog-web-app-v2/
 - **Middleware (src/middleware/)**: Request processors
   - `auth.js`: Authentication and authorization checks
 - **Views (views/)**: EJS templates for rendering
-  - `partials/`: Reusable components (header, footer)
+  - `partials/`: Reusable components
+    - `header.ejs`: Common page header with meta tags and CSS
+    - `footer.ejs`: Common page footer
+    - `menu.ejs`: Contextual navigation menu with dynamic buttons based on current page
+    - `article-item.ejs`: Template for rendering article items in lists
   - `pages/`: Main application pages
 - **Public**: Static assets
   - `css/`: Stylesheets including theme management
@@ -81,6 +87,33 @@ blog-web-app-v2/
 - **Tests**: Automated testing suite mirroring src structure
   - Tests follow the same structure as the src folder
   - Each module has corresponding unit tests
+
+### Template Structure and Strategy
+The application uses EJS templating with a component-based approach:
+
+1. **Base Layout**
+   - `header.ejs` and `footer.ejs` provide the basic page structure
+   - Meta tags, CSS imports, and common scripts are included in the header
+
+2. **Navigation System**
+   - `menu.ejs` provides a contextual navigation system that displays different buttons based on:
+     - Current page (`currentPage` variable)
+     - User authentication status (`isLoggedIn` variable)
+     - Author status for articles (`isAuthor` variable)
+   - Different action buttons:
+     - Back navigation: Handles different return behaviors (simple return or with cancellation toasts)
+     - Theme toggle: Present on all pages
+     - Action buttons: Edit, delete, create, etc. based on context
+
+3. **Reusable Components**
+   - `article-item.ejs` represents a single article in list views
+   - Each component receives only the data it needs to render
+   - Contextual display decisions happen in the component based on passed variables
+
+4. **Data Flow**
+   - Controllers prepare all necessary data before rendering
+   - View templates focus on presentation logic only
+   - Context variables (currentPage, articleId, etc.) control template behavior
 
 ### Testing Architecture
 - **Test Framework**: Jest with ES modules support

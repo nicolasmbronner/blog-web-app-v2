@@ -40,7 +40,9 @@ export function listArticles(req, res) {
     });
     res.render('pages/index.ejs', {
          articles: formattedArticles,
-         deviceType
+         deviceType,
+         currentPage: 'home',
+         isLoggedIn: true
     });
 }
 
@@ -72,7 +74,12 @@ export function getArticle(req, res) {
         formattedDate: dateFormatter.formatForArticle(article.creationDate)
     }
 
-    res.render('pages/article.ejs', { article: formattedArticle });
+    res.render('pages/article.ejs', {
+         article: formattedArticle,
+         currentPage: 'article',
+         articleId: article.id,
+         isAuthor: true
+    });
 }
 
 

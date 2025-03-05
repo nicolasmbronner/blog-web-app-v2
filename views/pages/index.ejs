@@ -1,12 +1,17 @@
 <%- include('../partials/header') %>
+<%- include('../partials/menu') %>
 
 <main>
-    <h1>Index Page</h1>
+    <h1>Mindfulness Blog</h1>
 
-    <% if (locals.articles) { %>
-        <% articles.forEach(article => { %>
-            <p><%= `${article.formattedDate} | ${article.title}` %></p>
-        <% }); %>
+    <% if (locals.articles && articles.length > 0) { %>
+        <div class="article-list">
+            <% articles.forEach(article => { %>
+                <%- include('../partials/article-item', { article }); %>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No article found</p>
     <% } %>
 </main>
 

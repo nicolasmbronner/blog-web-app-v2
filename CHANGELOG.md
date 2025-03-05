@@ -26,6 +26,17 @@ Convention de notation :
 - Unit tests with Jest for data and service layers
 - Test coverage configuration with 100% coverage achieved
 - Enhanced resetArticles function with silent mode parameter
+- Created reusable article-item.ejs partial for article lists
+- Created menu.ejs partial with contextual navigation buttons
+- Integrated Font Awesome for UI icons and buttons
+- Added semantic time display with datetime attribute for better accessibility
+- Enhanced context variables passing between controllers and views
+
+### Changed
+- Improved structure of index.ejs and article.ejs pages
+- Updated controllers to pass contextual variables to views (currentPage, articleId)
+- Improved template organization with reusable partials
+- Enhanced semantic markup with best practices for accessibility (time element)
 
 ## [0.3.0] - 2024-02-21
 

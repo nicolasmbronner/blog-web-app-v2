@@ -1,0 +1,57 @@
+<nav class="main-menu">
+    <!-- Left zone: only for the "back" button -->
+    <div class="left-actions">
+        <% if (locals.currentPage && currentPage !== 'home') { %>
+            <%
+                // Determine button "back" behavior
+                let backAction = '';
+                let dataAttributes = '';
+
+                if (currentPage === 'edit') {
+                    backAction = 'javascript:void(0)';
+                    dataAttributes = `data-cancel-action="edit" data-article-id="${locals.articleId}"`;
+                } else if (currentPage === 'new') {
+                    backAction = 'javascript:void(0)';
+                    dataAttributes = 'data-cancel-action="new"';
+                } else {
+                    backAction = '/';
+                }
+            %>
+            <a href="<%= backAction %>" class="btn-back" <%- dataAttributes %>>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+       <% } %>
+    </div>
+
+    <!-- Right zone: contextual actions + theme -->
+    <div class="right-actions">
+        <!-- Button "+" (only on welcome page and if logged in) -->
+        <% if (locals.currentPage === 'home' && locals.isLoggedIn) { %>
+            <a href="/articles/new" class="btn-add">
+                <i class="fas fa-plus"></i>
+            </a>
+        <% } %>
+
+        <!-- Saving button (only on edit / creation page) -->
+        <% if (locals.currentPage === 'edit' || locals.currentPage === 'new') { %>
+            <button type="submit" form="articleForm" class="btn-save">
+                <i class="fas fa-check"></i>
+            </button>
+        <% } %>
+
+        <!-- Edit and Delete buttons (only on article page and if author) -->
+        <% if (locals.currentPage === 'article' && locals.isAuthor) { %>
+            <a href="/articles/<%= articleId %>/edit" class="btn-edit">
+                <i class="fas fa-pen"></i>
+            </a>
+            <button type="button" class="btn-delete" data-article-id="<%= articleId %>">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        <% } %>
+
+        <!-- Theme toggle button (always present and last on the buttons list) -->
+         <button type="button" class="btn-theme">
+            <i class="fas fa-moon"></i>
+         </button>
+    </div>
+</nav>

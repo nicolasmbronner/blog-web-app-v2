@@ -36,16 +36,26 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [x] Device-responsive display (desktop/mobile)
   - [x] Time-sensitive formats (today, current year, past years)
   - [x] Integration with article routes and EJS templates
+- [x] Create reusable article item partial for displaying articles in lists
+- [x] Implement navigation menu with contextual buttons
+  - [x] Different buttons based on current page
+  - [x] Theme toggle functionality preparation
+  - [x] Support for edit/delete actions
+- [x] Integrate Font Awesome for UI icons
 
 ### 🔄 In Progress
 - [ ] **Blog Index Page**: Implement home page showing all available articles
+  - [x] Create basic article list structure
+  - [x] Set up contextual menu integration
   - [ ] Add navigation and article interaction buttons
   - [ ] Set up 6 pre-existing articles for blog reset
   - [ ] Create 404 page for non-existent articles (already deleted by another user)
 
 ### 📋 Planned (Backlog)
 - [ ] **Article Viewing**: Implement functionality to display articles on their own page
-  - [ ] Add navigation and article interaction buttons
+  - [x] Create basic article view template
+  - [x] Set up contextual menu integration
+  - [ ] Complete article formatting and layout
   
 - [ ] **Article Creation**: Set up article creation functionality
   - [ ] Create form on its own page
@@ -103,4 +113,4 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 
 ---
 
-*Last updated: February 27, 2025*
+*Last updated: March 05, 2025*
