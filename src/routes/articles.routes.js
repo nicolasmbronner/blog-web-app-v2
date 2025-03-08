@@ -71,7 +71,7 @@ export function getArticle(req, res) {
     // Create a copy of the article with formatted date for display
     const formattedArticle = {
         ...article,
-        formattedDate: dateFormatter.formatForArticle(article.creationDate)
+        formattedDate: dateFormatter.formatForArticle(article.creationDate, article.lastEditDate),
     }
 
     res.render('pages/article.ejs', {

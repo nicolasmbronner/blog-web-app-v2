@@ -51,17 +51,27 @@ const dateFormatter = {
         }
     },
   
-    formatForArticle: (dateString) => {
-        const date = new Date(dateString);
+    formatForArticle: (createdDateString, updatedDateString) => {
+        const createdDate = new Date(createdDateString);
+        const updatedDate = new Date(updatedDateString);
         const options = {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
             day: 'numeric' 
         };
-    
+
+        // Format creation date
         // @ts-ignore
-        return date.toLocaleDateString('en-US', options);
+        const createdStr = `Created: ${createdDate.toLocaleDateString('en-US', options)}`;
+        
+        // Check if updated date is different from creation date
+        if (createdDate.getTime() !== updatedDate.getTime()) {
+            // @ts-ignore
+            return `${createdStr}. Updated: ${updatedDate.toLocaleDateString('en-US', options)}`;
+        } else {
+            return createdStr;
+        }
     }
 };
 

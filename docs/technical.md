@@ -71,6 +71,7 @@ blog-web-app-v2/
     - Display context (article list vs detailed page)
     - Device type (compact formatting for mobile)
     - Temporal context (today, current year, past years)
+    - Comparison between creation and update dates to only show relevant information
     - Used by article routes to standardize date presentation
 - **Middleware (src/middleware/)**: Request processors
   - `auth.js`: Authentication and authorization checks
@@ -107,8 +108,9 @@ The application uses EJS templating with a component-based approach:
 
 3. **Reusable Components**
    - `article-item.ejs` represents a single article in list views
-   - Each component receives only the data it needs to render
-   - Contextual display decisions happen in the component based on passed variables
+     - Each title is a clickable link to the article detail page
+     - Each component receives only the data it needs to render
+     - Contextual display decisions happen in the component based on passed variables
 
 4. **Data Flow**
    - Controllers prepare all necessary data before rendering

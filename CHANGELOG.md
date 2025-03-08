@@ -31,12 +31,15 @@ Convention de notation :
 - Integrated Font Awesome for UI icons and buttons
 - Added semantic time display with datetime attribute for better accessibility
 - Enhanced context variables passing between controllers and views
+- Added clickable article titles with links to article detail pages
+- Improved date formatting to conditionally display update date only when different from creation date
 
 ### Changed
 - Improved structure of index.ejs and article.ejs pages
 - Updated controllers to pass contextual variables to views (currentPage, articleId)
 - Improved template organization with reusable partials
 - Enhanced semantic markup with best practices for accessibility (time element)
+- Modified dateFormatter.formatForArticle to accept and compare two dates
 
 ## [0.3.0] - 2024-02-21
 

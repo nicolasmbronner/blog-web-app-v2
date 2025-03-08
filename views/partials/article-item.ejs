@@ -1,4 +1,4 @@
-<article class="article-item" data-id="<%= article.id %>">
+<<article class="article-item" data-id="<%= article.id %>">
     <div class="article-background">
         <span class="swipe-icon left" data-action="edit">
             <i class="fas fa-pen"></i>
@@ -9,7 +9,7 @@
     </div>
     <div class="article-content">
         <time class="article-date" datetime="<%= article.creationDate %>"><%= article.formattedDate %></time>
-        <h3 class="article-title"><%= article.title %></h3>
+        <h3 class="article-title"><a href="/articles/<%= article.id %>"><%= article.title %></a></h3>
         <div class="article-actions">
             <button type="button" class="btn-edit" data-action="edit">
                 <i class="fas fa-pen"></i>

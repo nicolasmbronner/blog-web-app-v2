@@ -42,12 +42,15 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [x] Theme toggle functionality preparation
   - [x] Support for edit/delete actions
 - [x] Integrate Font Awesome for UI icons
+- [x] Make article titles clickable with links to article detail pages
+- [x] Improve date formatting for article detail pages to conditionally show edit date
 
 ### 🔄 In Progress
 - [ ] **Blog Index Page**: Implement home page showing all available articles
   - [x] Create basic article list structure
   - [x] Set up contextual menu integration
-  - [ ] Add navigation and article interaction buttons
+  - [x] Add navigation with clickable titles
+  - [ ] Add article interaction buttons
   - [ ] Set up 6 pre-existing articles for blog reset
   - [ ] Create 404 page for non-existent articles (already deleted by another user)
 
@@ -55,6 +58,7 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 - [ ] **Article Viewing**: Implement functionality to display articles on their own page
   - [x] Create basic article view template
   - [x] Set up contextual menu integration
+  - [x] Implement proper date formatting for creation and update dates
   - [ ] Complete article formatting and layout
   
 - [ ] **Article Creation**: Set up article creation functionality
