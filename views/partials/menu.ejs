@@ -1,3 +1,5 @@
+<!-- TODO: line 16: Replace with "javascript:void(0)" when toast implemented -->
+
 <nav class="main-menu">
     <!-- Left zone: only for the "back" button -->
     <div class="left-actions">
@@ -11,7 +13,9 @@
                     backAction = 'javascript:void(0)';
                     dataAttributes = `data-cancel-action="edit" data-article-id="${locals.articleId}"`;
                 } else if (currentPage === 'new') {
-                    backAction = 'javascript:void(0)';
+                    backAction = '/';
+                    // TODO: Replace with "javascript:void(0)" when toast implemented
+                    // backAction = 'javascript:void(0)';
                     dataAttributes = 'data-cancel-action="new"';
                 } else {
                     backAction = '/';

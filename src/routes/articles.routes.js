@@ -39,7 +39,7 @@ export function listArticles(req, res) {
         };
     });
     res.render('pages/index.ejs', {
-         articles: formattedArticles,
+         articles: formattedArticles.reverse(),
          deviceType,
          currentPage: 'home',
          isLoggedIn: true
@@ -47,7 +47,10 @@ export function listArticles(req, res) {
 }
 
 export function showNewArticleForm(req, res) {
-    res.send('<h1>New Article Form</h1>');
+    res.render('pages/new.ejs', {
+        currentPage: 'new',
+        isLoggedIn: true
+    });
 }
 
 // While currently similar to other article-handling functions,

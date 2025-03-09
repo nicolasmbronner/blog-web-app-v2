@@ -2,3 +2,11 @@ html {
     background: #121212;
     color: white;
 }
+
+.article-item {
+    display: flex;
+}
+
+.article-item h3 {
+    margin: 5px;
+}

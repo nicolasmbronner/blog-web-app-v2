@@ -50,9 +50,10 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [x] Create basic article list structure
   - [x] Set up contextual menu integration
   - [x] Add navigation with clickable titles
-  - [ ] Add article interaction buttons
-  - [ ] Set up 6 pre-existing articles for blog reset
-  - [ ] Create 404 page for non-existent articles (already deleted by another user)
+  - [x] Configure chronological order for articles (most recent first)
+  - [x] Set up 6 pre-existing articles for blog reset
+  - [x] Create 404 page for non-existent articles (already deleted by another user)
+  - [ ] Implement basic buttons for 'new article', 'edit article' and 'delete article' buttons
 
 ### 📋 Planned (Backlog)
 - [ ] **Article Viewing**: Implement functionality to display articles on their own page
@@ -62,9 +63,10 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [ ] Complete article formatting and layout
   
 - [ ] **Article Creation**: Set up article creation functionality
-  - [ ] Create form on its own page
+  - [x] Create page navigation structure
+  - [x] Configure contextual menu buttons
+  - [ ] Implement form for new articles
   - [ ] Handle form submission server-side
-  - [ ] Add navigation and article interaction buttons
   
 - [ ] **Article Modification**: Use a form to load existing blog article for editing
   - [ ] Implement save functionality
@@ -72,7 +74,7 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [ ] Create edit cancellation function (Gmail-like simple design)
   - [ ] Ensure line breaks are preserved after editing
   
-- [ ] **Article Deletion**: Allow user to delete an article from the home page
+- [ ] **Article Deletion**: Allow user to delete article from the home page or article viewing
   - [ ] Ensure deletion can be undone
   
 - [ ] **Reset Functionality**: Ensure articles aren't preserved between sessions
