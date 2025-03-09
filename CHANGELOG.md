@@ -17,6 +17,9 @@ Convention de notation :
 ## [Unreleased]
 
 ### Added
+- Implementation of reverse chronological order for article display (newest first)
+- Page context configuration for conditional UI elements display
+- Functional navigation setup between home and article creation pages
 - Implementation of adaptive date formatting for articles
 - Integration of dateFormatter utility in article views
 - Device detection for responsive date display formats

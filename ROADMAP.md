@@ -53,7 +53,7 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [x] Configure chronological order for articles (most recent first)
   - [x] Set up 6 pre-existing articles for blog reset
   - [x] Create 404 page for non-existent articles (already deleted by another user)
-  - [ ] Implement basic buttons for 'new article', 'edit article' and 'delete article' buttons
+  - [ ] Implement basic functions for 'new article', 'edit article' and 'delete article' buttons
 
 ### 📋 Planned (Backlog)
 - [ ] **Article Viewing**: Implement functionality to display articles on their own page
