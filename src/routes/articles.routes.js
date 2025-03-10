@@ -60,11 +60,14 @@ export function showEditArticleForm(req, res) {
     const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
-    res.send(
-        `<h1>Edit : ${article.title}</h1>
-        <p>${article.creationDate}</p>
-        <p>${article.content}</p>`
-    );
+    // Render the template edit.ejs with article datas
+    res.render('pages/edit.ejs', {
+        article,
+        currentPage: 'edit',
+        articleId: article.id,
+        isLoggedIn: true, // TODO: Normally this is based on user session
+        isAuthor: true // TODO: Normally we check if user is the author
+    });
 }
 
 export function getArticle(req, res) {
@@ -98,10 +101,17 @@ export function createArticle(req, res) {
 // PUT Routes
 // =====================================
 export function updateArticle(req, res) {
-    const article = articleService.getArticleById(req.params.id);
-    if (!article) return handleArticleNotFound(res);
+    // Receive article data from request body
+    const { title, content } = req.body;
 
-    res.send(`<h1>Article ${article.id} Updated</h1>`);
+    // Update article on database
+    const updatedArticle = articleService.updateArticle(req.params.id, { title, content });
+
+    // If article not found, return 404
+    if (!updatedArticle) return handleArticleNotFound(res);
+
+    // Redirect to article page after update
+    res.redirect(`/articles/${updatedArticle.id}`);    
 }
 
 
@@ -109,8 +119,12 @@ export function updateArticle(req, res) {
 // DELETE Routes
 // =====================================
 export function deleteArticle(req, res) {
-    const article = articleService.getArticleById(req.params.id);
-    if (!article) return handleArticleNotFound(res);
+    // Use service function to delete article
+    const deletedArticle = articleService.deleteArticleById(req.params.id);
 
-    res.send(`<h1>Article ${article.id} Deleted</h1>`);
+    // If article not found, return 404
+    if (!deletedArticle) return handleArticleNotFound(res);
+
+    // Redirect to home page after deletion
+    res.redirect('/');
 }

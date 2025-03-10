@@ -6,6 +6,7 @@ import device             from 'express-device';
 import bodyParser         from 'body-parser';
 import { WebSocketServer} from 'ws';
 import { createServer }   from 'http';
+import { methodOverride}  from './src/middleware/methodOverride.js';
 
 import { showLogin }      from './src/routes/auth.routes.js';
 import * as articleRoutes from './src/routes/articles.routes.js';
@@ -53,6 +54,9 @@ wss.on('connection', (ws) => {
 app.use(express.static('public'));
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// Middleware to allow HTTP methods (PUT, DELETE) unsupported by browsers
+app.use(methodOverride);
 
 // Configure view engine
 app.set('view engine', 'ejs');
