@@ -78,11 +78,18 @@ app.get('/', articleRoutes.listArticles);
 app.get('/articles/new', articleRoutes.showNewArticleForm);
 app.get('/articles/:id/edit', articleRoutes.showEditArticleForm);
 app.get('/articles/:id', articleRoutes.getArticle);
+<<<<<<< Updated upstream
+=======
+
+// Alternative toutes for DELETE operations due to browser limitations
+app.get('/articles/:id/delete', articleRoutes.deleteArticle); // For debugging/testing only
+app.post('/articles/:id/remove', articleRoutes.deleteArticle); // Primary alternative to DELETE
+>>>>>>> Stashed changes
 
 // POST, PUT, DELETE - Data modifications
 app.post('/articles/', articleRoutes.createArticle);
 app.put('/articles/:id', articleRoutes.updateArticle);
-app.delete('/articles/:id', articleRoutes.deleteArticle);
+app.delete('/articles/:id', articleRoutes.deleteArticle); // Kept for API completeness but not used by browser UI
 
 
 // =====================================

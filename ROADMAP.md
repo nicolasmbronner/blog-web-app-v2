@@ -31,7 +31,19 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 ## 🚧 Core Features Implementation
 
 ### ✅ Recently Completed
-- [x] Implement date formatting function that adapts to the device
+- [x] Implement article editing functionality
+  - [x] Edit button in article list redirecting to edit form
+  - [x] Edit form with pre-populated article data
+  - [x] Form submission with article update
+- [x] Implement article deletion functionality
+  - [x] Delete button in article list with immediate visual feedback
+  - [x] Server-side deletion with DOM update (no page reload)
+  - [x] Alternative route implementation for browser compatibility
+- [x] Create modular JavaScript architecture
+  - [x] Main.js as entry point
+  - [x] Interactions.js for article interactions
+  - [x] Module loading with ES6 import/export
+- [x] Implementation of date formatting function that adapts to the device
   - [x] Context-aware formatting (list vs article page)
   - [x] Device-responsive display (desktop/mobile)
   - [x] Time-sensitive formats (today, current year, past years)
@@ -46,51 +58,49 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 - [x] Improve date formatting for article detail pages to conditionally show edit date
 
 ### 🔄 In Progress
-- [ ] **Blog Index Page**: Implement home page showing all available articles
-  - [x] Create basic article list structure
-  - [x] Set up contextual menu integration
-  - [x] Add navigation with clickable titles
-  - [x] Configure chronological order for articles (most recent first)
-  - [x] Set up 6 pre-existing articles for blog reset
-  - [x] Create 404 page for non-existent articles (already deleted by another user)
-  - [ ] Implement basic functions for 'new article', 'edit article' and 'delete article' buttons
+- [ ] **Toast Notifications System**: Implement Gmail-like toast system
+  - [ ] Create notification system when articles are deleted
+  - [ ] Add undo functionality for deleted articles
+  - [ ] Add notification appearance/disappearance animations
+  - [ ] Implement timed auto-dismiss with progress indicator
 
 ### 📋 Planned (Backlog)
-- [ ] **Article Viewing**: Implement functionality to display articles on their own page
-  - [x] Create basic article view template
-  - [x] Set up contextual menu integration
-  - [x] Implement proper date formatting for creation and update dates
-  - [ ] Complete article formatting and layout
-  
-- [ ] **Article Creation**: Set up article creation functionality
+- [ ] **Article Creation**: Complete article creation functionality
   - [x] Create page navigation structure
   - [x] Configure contextual menu buttons
-  - [ ] Implement form for new articles
+  - [ ] Implement form for new articles with validation
   - [ ] Handle form submission server-side
+  - [ ] Add toast notification for cancel action
   
-- [ ] **Article Modification**: Use a form to load existing blog article for editing
-  - [ ] Implement save functionality
-  - [ ] Add navigation and article interaction buttons
-  - [ ] Create edit cancellation function (Gmail-like simple design)
-  - [ ] Ensure line breaks are preserved after editing
-  
-- [ ] **Article Deletion**: Allow user to delete article from the home page or article viewing
-  - [ ] Ensure deletion can be undone
+- [ ] **UI Enhancements**: Improve article interaction feedback
+  - [ ] Add animation for article deletion in list
+  - [ ] Implement touch swipe gestures for mobile devices
+  - [ ] Add article hover effects on desktop
   
 - [ ] **Reset Functionality**: Ensure articles aren't preserved between sessions
+  - [ ] Complete WebSocket implementation for tracking users
+  - [ ] Implement proper reset when last user disconnects
+  
+- [ ] **Styling**: Complete CSS implementation
+  - [ ] Implement light and dark themes
+  - [ ] Complete responsive layout for all device sizes
+  - [ ] Style article forms for better user experience
 
 ## 🎨 UI/UX Enhancement
 
-- [ ] **Toast Notifications**: Create Gmail-like toast system for:
-  - [ ] Canceling article deletion
-  - [ ] Canceling article editing
-  - [ ] Canceling article creation
+- [ ] **Touch Gestures**: Implement swipe interactions for mobile devices
+  - [ ] Swipe left to delete articles
+  - [ ] Swipe right to edit articles
+  - [ ] Add visual indicators during swipe
   
-- [ ] **Article Interactions**: Make article interaction buttons work on index page
+- [ ] **Article Interactions**: Enhance desktop interactions
+  - [ ] Add hover animations for article items
+  - [ ] Improve button visibility and feedback
   
-- [ ] **Styling**: Create CSS file and link to EJS templates
+- [ ] **Styling**: Complete CSS styling across all pages
   - [ ] Implement light and dark themes
   - [ ] Use CSS Grid/Flexbox for responsive layout
+  - [ ] Create consistent styling across all pages
   
 - [ ] **Multi-device Testing**: Ensure style works correctly on different screen sizes and browsers
   - [ ] Verify mouse and touch navigation work properly based on device
@@ -104,10 +114,11 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 
 - [x] **Unit Testing**: Set up and implement tests for core modules
 - [ ] **Application Testing**: Verify article creation and viewing work correctly  
+- [ ] **Browser Compatibility**: Test on different browsers
 - [ ] **Bug Fixing**: Fix any issues that arise during testing
 - [ ] **Deployment**: Put the site online
   - [ ] Research best solution for hosting
-  - [ ] Prefer local hosting or fast-loading free hosting (avoid 1-2 minute load times)
+  - [ ] Prefer local hosting or fast-loading free hosting
 
 ## 📈 Future Enhancements
 
@@ -116,7 +127,10 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 - [ ] User profiles and comments
 - [ ] Article tagging and categorization
 - [ ] Search functionality
+- [ ] Replace current DELETE workaround with proper implementation
+  - [ ] Investigate browser redirect issues with DELETE requests
+  - [ ] Consider implementing a more robust client-side framework
 
 ---
 
-*Last updated: March 05, 2025*
+*Last updated: March 10, 2025*

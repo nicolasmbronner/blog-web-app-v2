@@ -16,7 +16,8 @@ blog-web-app-v2/
 │   ├── utils/
 │   │   └── dateFormatter.js    # Date formatting utilities
 │   └── middleware/
-│       └── auth.js             # Authentication middleware
+│       ├── auth.js             # Authentication middleware
+│       └── methodOverride.js   # HTTP method override for PUT/DELETE
 ├── tests/
 │   ├── data/
 │   │   └── articlesStore.test.js  # Tests for articles data store
@@ -31,7 +32,12 @@ blog-web-app-v2/
 │   │   └── styles.css          # Themes and styles
 │   └── js/
 │       ├── main.js             # Client-side JavaScript
-│       └── websocket.js        # WebSocket client connection
+│       ├── websocket.js        # WebSocket client connection
+│       └── modules/
+│           ├── interactions.js # Article interactions handling
+│           ├── notifications.js # Toast notification system
+│           ├── responsive.js   # Device-specific adaptations
+│           └── theme.js        # Theme switching functionality
 ├── views/
 │   ├── partials/
 │   │   ├── header.ejs          # Reusable header with theme toggle
@@ -67,27 +73,65 @@ blog-web-app-v2/
 - **Services (src/services/)**: Contains business logic
   - `articleService.js`: Articles CRUD operations
 - **Utils (src/utils/)**: Reusable utility functions
-  - `dateFormatter.js`: Context-aware date formatting utility that adapts display based on:
-    - Display context (article list vs detailed page)
-    - Device type (compact formatting for mobile)
-    - Temporal context (today, current year, past years)
-    - Comparison between creation and update dates to only show relevant information
-    - Used by article routes to standardize date presentation
+  - `dateFormatter.js`: Context-aware date formatting utility
 - **Middleware (src/middleware/)**: Request processors
   - `auth.js`: Authentication and authorization checks
+  - `methodOverride.js`: HTTP method override support for forms
 - **Views (views/)**: EJS templates for rendering
   - `partials/`: Reusable components
-    - `header.ejs`: Common page header with meta tags and CSS
-    - `footer.ejs`: Common page footer
-    - `menu.ejs`: Contextual navigation menu with dynamic buttons based on current page
-    - `article-item.ejs`: Template for rendering article items in lists
   - `pages/`: Main application pages
 - **Public**: Static assets
   - `css/`: Stylesheets including theme management
   - `js/`: Client-side interactivity
+    - `modules/`: Modular JavaScript functionality
+      - `interactions.js`: Article interactions handling
 - **Tests**: Automated testing suite mirroring src structure
-  - Tests follow the same structure as the src folder
-  - Each module has corresponding unit tests
+
+### REST API & Browser Compatibility
+
+The application follows RESTful principles with some practical adaptations for browser compatibility:
+
+1. **Standard REST Routes**:
+   - `GET /articles`: List articles
+   - `POST /articles`: Create article
+   - `GET /articles/:id`: View article
+   - `PUT /articles/:id`: Update article
+   - `DELETE /articles/:id`: Delete article
+
+2. **Browser Compatibility Adaptations**:
+   - `GET /articles/:id/edit`: Show edit form (separate from PUT operation)
+   - `POST /articles/:id/remove`: Alternative to DELETE for better browser support
+
+3. **HTTP Method Support**:
+   - The `methodOverride` middleware enables HTML forms to use PUT/DELETE methods
+   - For client-side JavaScript, alternative POST routes are used instead of DELETE
+     due to browser compatibility and redirect handling issues
+
+### Client-Side Architecture
+
+The front-end JavaScript is organized in a modular pattern:
+
+1. **Main Entry Point**: `main.js` coordinates all modules
+2. **Module Structure**:
+   - `interactions.js`: Handles all article interactions (edit/delete buttons)
+   - Future modules: notifications.js, responsive.js, theme.js
+3. **Event Binding**:
+   - Events are bound at page load through the `initInteractions()` function
+   - Uses event delegation where appropriate
+4. **DOM Updates**:
+   - Article deletion is handled client-side without page reload
+   - DOM elements are removed after successful server operations
+
+### Form Handling
+
+1. **Edit Form**:
+   - Uses `_method` hidden field to simulate PUT requests
+   - Pre-populates with article data
+   - Redirects to article view after successful update
+
+2. **Method Override**:
+   - The `methodOverride` middleware detects the `_method` parameter
+   - Changes the HTTP method accordingly for server-side processing
 
 ### Template Structure and Strategy
 The application uses EJS templating with a component-based approach:
@@ -108,9 +152,8 @@ The application uses EJS templating with a component-based approach:
 
 3. **Reusable Components**
    - `article-item.ejs` represents a single article in list views
-     - Each title is a clickable link to the article detail page
-     - Each component receives only the data it needs to render
-     - Contextual display decisions happen in the component based on passed variables
+     - Each article includes edit/delete buttons
+     - Buttons trigger JavaScript actions without page reload
 
 4. **Data Flow**
    - Controllers prepare all necessary data before rendering

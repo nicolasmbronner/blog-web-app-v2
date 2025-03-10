@@ -17,6 +17,19 @@ Convention de notation :
 ## [Unreleased]
 
 ### Added
+- Implementation of article editing functionality (client-side and server-side)
+  - Edit button in article list directing to edit form
+  - Edit form with pre-populated article data
+  - Form submission with article update functionality
+- Implementation of article deletion functionality
+  - Delete button in article list with immediate visual feedback
+  - Server-side deletion with browser compatibility workarounds
+  - DOM update without page reload for better user experience
+- Client-side JavaScript modules structure with module loading
+  - Main.js as coordination point
+  - Interactions.js for handling article interactions
+- HTTP method override middleware to support PUT/DELETE methods
+- Alternative routes for browser compatibility
 - Implementation of reverse chronological order for article display (newest first)
 - Page context configuration for conditional UI elements display
 - Functional navigation setup between home and article creation pages
@@ -43,6 +56,8 @@ Convention de notation :
 - Improved template organization with reusable partials
 - Enhanced semantic markup with best practices for accessibility (time element)
 - Modified dateFormatter.formatForArticle to accept and compare two dates
+- Switched from DELETE to POST method for article deletion for browser compatibility
+- Enhanced article service functions with more robust error handling
 
 ## [0.3.0] - 2024-02-21
 

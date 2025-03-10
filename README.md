@@ -50,12 +50,22 @@ blog-web-app-v2/
 
 ## ✨ Features
 
-- Read articles
-- Adaptable date formats to display
+- Read articles with formatted dates
 - Create, Edit, Delete your articles
-- Light/dark mode toggle
-- Realtime feedbacks
-- Cross platform
+- Client-side article interactions without page reloads
+- Modular JavaScript architecture
+- Light/dark mode toggle (in progress)
+- Adaptable date formats based on device and context
+- Cross platform responsive design
+
+## 🔧 Technical Notes
+
+- Uses Express.js for server-side rendering with EJS templates
+- Client-side JavaScript organized in modules (ES6)
+- In-memory article storage with full CRUD operations
+- Custom middleware for HTTP method support
+- Adaptive design for desktop and mobile devices
+- RESTful API pattern with browser compatibility adaptations
 
 ## 🎨 Color Reference
 
