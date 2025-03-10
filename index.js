@@ -6,6 +6,7 @@ import device             from 'express-device';
 import bodyParser         from 'body-parser';
 import { WebSocketServer} from 'ws';
 import { createServer }   from 'http';
+import { methodOverride}  from './src/middleware/methodOverride.js';
 
 import { showLogin }      from './src/routes/auth.routes.js';
 import * as articleRoutes from './src/routes/articles.routes.js';
@@ -54,6 +55,9 @@ app.use(express.static('public'));
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }))
 
+// Middleware to allow HTTP methods (PUT, DELETE) unsupported by browsers
+app.use(methodOverride);
+
 // Configure view engine
 app.set('view engine', 'ejs');
 
@@ -79,7 +83,7 @@ app.get('/articles/new', articleRoutes.showNewArticleForm);
 app.get('/articles/:id/edit', articleRoutes.showEditArticleForm);
 app.get('/articles/:id', articleRoutes.getArticle);
 
-// Alternative toutes for DELETE operations due to browser limitations
+// Alternative routes for DELETE operations due to browser limitations
 app.get('/articles/:id/delete', articleRoutes.deleteArticle); // For debugging/testing only
 app.post('/articles/:id/remove', articleRoutes.deleteArticle); // Primary alternative to DELETE
 

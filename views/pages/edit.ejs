@@ -1,5 +1,27 @@
 <%- include('../partials/header') %>
+<%- include('../partials/menu') %>
 
-<h1>Article Edit Page</h1>
+<main>
+    <% if (locals.article) { %>
+        <form id="articleForm" action="/articles/<%= article.id %>" method="POST" class="article-form">
+            <!-- We use POST as browsers don't support PUT natively on forms -->
+            <input type="hidden" name="_method" value="PUT">
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" value="<%= article.title %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" rows="10" required><%= article.content %></textarea>
+            </div>
+
+            <!-- Save button is on menu.ejs with type="submit" form="articleForm" -->
+        </form>
+    <% } else { %>
+        <p>Article not found</p>
+    <% } %>
+</main>
 
 <%- include('../partials/footer') %>

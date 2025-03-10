@@ -1,34 +1,46 @@
 /**
- * main.js - Point d'entrée JavaScript principal
+ * main.js - Main JavaScript entry point
  * 
- * Ce fichier coordonne les différents modules de l'application,
- * initialise les fonctionnalités et gère les interactions globales.
+ * This file coordinates the different application modules,
+ * initializes features and manages global interactions.
  * 
- * Modules importés:
+ * Imported modules:
  * 
- * - interactions.js : Gère toutes les interactions utilisateur avec les articles
- *   * Swipe tactile pour éditer/supprimer
- *   * Gestion des clics sur les boutons d'action
- *   * Affichage/masquage contextuel des boutons selon le dispositif
+ * - interactions.js: Handles all user interactions with articles
+ *   * Touch swipe for edit/delete
+ *   * Click handling for action buttons
+ *   * Contextual display/hiding of buttons based on device
  * 
- * - notifications.js : Système de notifications toast
- *   * Création et affichage des notifications toast
- *   * Gestion des actions d'annulation (undo)
- *   * Animation des toasts et gestion de la file d'attente
+ * - notifications.js: Toast notification system
+ *   * Creation and display of toast notifications
+ *   * Undo action management
+ *   * Toast animations and queue management
  * 
- * - responsive.js : Adaptations pour différents appareils
- *   * Détection du type d'appareil (desktop/tactile)
- *   * Ajustement des interactions selon le contexte
- *   * Modifications spécifiques pour les écrans tactiles
+ * - responsive.js: Adaptations for different devices
+ *   * Device type detection (desktop/touch)
+ *   * Interaction adjustments based on context
+ *   * Touch-specific modifications
  * 
- * - theme.js : Gestion du thème visuel
- *   * Basculement entre modes clair/sombre
- *   * Persistance du choix de thème
- *   * Initialisation du thème au chargement
+ * - theme.js: Visual theme management
+ *   * Toggle between light/dark modes
+ *   * Theme choice persistence
+ *   * Theme initialization at loading
  */
 
-// Initialisation de l'application au chargement du document
+// Imports
+import { initInteractions } from './modules/interactions.js';
+// Other modules will be imported later
+// import { initNotifications } from './modules/notifications.js';
+// import { initResponsive } from './modules/responsive.js';
+// import { initTheme } from './modules/theme.js';
+
+// Initialize application when document loads
 document.addEventListener('DOMContentLoaded', () => {
-    // TODO: Initialiser chaque module ici
-    // Le code sera complété au fur et à mesure du développement
+    // Initialize article interactions
+    initInteractions();
+    
+    // Other modules will be initialized later
+    // initNotifications();
+    // initResponsive();
+    // initTheme();
 });

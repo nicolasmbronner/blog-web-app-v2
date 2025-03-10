@@ -60,11 +60,14 @@ export function showEditArticleForm(req, res) {
     const article = articleService.getArticleById(req.params.id);
     if (!article) return handleArticleNotFound(res);
 
-    res.send(
-        `<h1>Edit : ${article.title}</h1>
-        <p>${article.creationDate}</p>
-        <p>${article.content}</p>`
-    );
+    // Render the template edit.ejs with article data
+    res.render('pages/edit.ejs', {
+        article,
+        currentPage: 'edit',
+        articleId: article.id,
+        isLoggedIn: true,
+        isAuthor: true
+    });
 }
 
 export function getArticle(req, res) {
@@ -98,10 +101,17 @@ export function createArticle(req, res) {
 // PUT Routes
 // =====================================
 export function updateArticle(req, res) {
-    const article = articleService.getArticleById(req.params.id);
-    if (!article) return handleArticleNotFound(res);
-
-    res.send(`<h1>Article ${article.id} Updated</h1>`);
+    // Récupérer les données du formulaire
+    const { title, content } = req.body;
+    
+    // Mettre à jour l'article dans la base de données
+    const updatedArticle = articleService.updateArticle(req.params.id, { title, content });
+    
+    // Si l'article n'existe pas, retourner une erreur 404
+    if (!updatedArticle) return handleArticleNotFound(res);
+    
+    // Rediriger vers la page de l'article après la mise à jour
+    res.redirect(`/articles/${updatedArticle.id}`);
 }
 
 

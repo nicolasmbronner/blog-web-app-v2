@@ -19,7 +19,7 @@ describe('articleService', () => {
         // @ts-ignore
         expect(article.id).toBe(1);
         // @ts-ignore
-        expect(article.title).toBe('Bodhichitta');
+        expect(article.title).toBe('I am conscious of my body');
     });
 
     // Test 2: Verify behavior with non-existent ID
@@ -41,6 +41,6 @@ describe('articleService', () => {
         // @ts-ignore
         expect(article.id).toBe(2);
         // @ts-ignore
-        expect(article.title).toBe('Smile');
+        expect(article.title).toBe('Here and now');
     });
 });
