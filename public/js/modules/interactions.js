@@ -26,10 +26,6 @@ function initArticleButtons() {
         // Get article ID using getAttribute
         const articleId = article.getAttribute('data-id');
         
-        // Debug - check if we're getting the ID correctly
-        console.log('Article element:', article);
-        console.log('Article ID:', articleId);
-        
         // Add event handlers to edit buttons
         editButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -67,14 +63,21 @@ function handleEditArticle(articleId) {
 // Handle click on delete button
 function handleDeleteArticle(articleId, articleElement) {
     console.log('Deleting article with ID:', articleId);
+
+    // NOTE: We're using POST instead of DELETE for better browser compatibility.
+    // The standard REST approach would be to use DELETE, but we encountered issues
+    // with browser redirections. This implementation provides the same functionality
+    // while ensuring cross-browser support. In a future implementation with more
+    // advanced frameworks, we could switch back to proper DELETE methods.
     
-    // Utiliser POST à la place de DELETE
+    // Using POST instead of DELETE
     fetch(`/articles/${articleId}/remove`, {
         method: 'POST'
     })
     .then(response => {
         console.log('Delete response:', response);
         if (response.ok) {
+            // if delete was successful, delete element from the DOM
             articleElement.remove();
             console.log('Article successfully deleted');
         } else {
