@@ -68,9 +68,9 @@ function handleEditArticle(articleId) {
 function handleDeleteArticle(articleId, articleElement) {
     console.log('Deleting article with ID:', articleId);
     
-    // Utiliser une route GET temporairement pour tester
-    fetch(`/articles/${articleId}/delete`, {
-        method: 'GET',
+    // Utiliser POST à la place de DELETE
+    fetch(`/articles/${articleId}/remove`, {
+        method: 'POST'
     })
     .then(response => {
         console.log('Delete response:', response);

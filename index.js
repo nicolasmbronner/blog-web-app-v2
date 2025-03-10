@@ -82,9 +82,11 @@ app.get('/', articleRoutes.listArticles);
 app.get('/articles/new', articleRoutes.showNewArticleForm);
 app.get('/articles/:id/edit', articleRoutes.showEditArticleForm);
 app.get('/articles/:id', articleRoutes.getArticle);
+app.get('/articles/:id/delete', articleRoutes.deleteArticle);
 
 // POST, PUT, DELETE - Data modifications
 app.post('/articles/', articleRoutes.createArticle);
+app.post('/articles/:id/remove', articleRoutes.deleteArticle);
 app.put('/articles/:id', articleRoutes.updateArticle);
 app.delete('/articles/:id', articleRoutes.deleteArticle);
 
