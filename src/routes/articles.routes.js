@@ -119,8 +119,25 @@ export function updateArticle(req, res) {
 // DELETE Routes
 // =====================================
 export function deleteArticle(req, res) {
-    const article = articleService.getArticleById(req.params.id);
-    if (!article) return handleArticleNotFound(res);
+    // Get article ID from request parameters
+    const articleId = req.params.id;
 
-    res.send(`<h1>Article ${article.id} Deleted</h1>`);
+    // Call deleteArticle function from articleService
+    const deletedArticle = articleService.deleteArticleById(articleId);
+
+    // Check if article was found and deleted
+    if (!deletedArticle) {
+        return handleArticleNotFound(res);
+    }
+
+    // Determine if request comes from fetch (AJAX) or click on a link
+    const isAjaxRequest = req.xhr || req.headers.accept.indexOf('json') > -1;
+
+    if (isAjaxRequest) {
+        // For AJAX request (like in interactions.js)
+        res.status(200).json({ success: true, message: `Article ${articleId} deleted` });
+    } else {
+        // For classic request (clic on a link)
+        res.redirect('/');
+    }
 }

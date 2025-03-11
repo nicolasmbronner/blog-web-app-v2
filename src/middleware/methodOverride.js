@@ -15,13 +15,9 @@
  */
 
 export function methodOverride(req, res, next) {
-    console.log('Method override middleware called', {
-        originalMethod: req.method,
-        body: req.body
-    });
-    
+    // Log only if method is replaced
     if (req.body && req.body._method) {
-        console.log(`Overriding method from ${req.method} to ${req.body._method.toUpperCase()}`);
+        console.log(`Méthode modifiée: ${req.method} → ${req.body._method.toUpperCase()}`);
         req.method = req.body._method.toUpperCase();
         delete req.body._method;
     }

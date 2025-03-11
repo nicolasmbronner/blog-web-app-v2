@@ -49,6 +49,10 @@ Convention de notation :
 - Enhanced context variables passing between controllers and views
 - Added clickable article titles with links to article detail pages
 - Improved date formatting to conditionally display update date only when different from creation date
+- Implementation of blog reset functionality when all users disconnect
+  - Refactored WebSocket connection handling with proper timer management
+  - Delayed reset with cancellation capability when users reconnect
+  - Integrated with articlesStore reset function
 
 ### Changed
 - Improved structure of index.ejs and article.ejs pages
@@ -58,6 +62,12 @@ Convention de notation :
 - Modified dateFormatter.formatForArticle to accept and compare two dates
 - Switched from DELETE to POST method for article deletion for browser compatibility
 - Enhanced article service functions with more robust error handling
+- Refactored WebSocket handling for better timer management and cleaner code organization
+
+### Fixed
+- Fixed article deletion functionality to properly remove articles from the in-memory data store
+- Fixed reset functionality to prevent multiple resets from occurring simultaneously
+- Reduced console verbosity by improving methodOverride middleware logging
 
 ## [0.3.0] - 2024-02-21
 

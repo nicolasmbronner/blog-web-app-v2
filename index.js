@@ -24,24 +24,65 @@ const server = createServer(app);
 // Create WebSocket server
 const wss = new WebSocketServer({ server });
 
-// Keep track of connected users to the server
+// Keep track of connected users and reset timer
 let connectedUsers = 0;
+let resetTimer = null;
+
+// Function to cancel any scheduled reset
+function cancelScheduledReset() {
+    if (resetTimer !== null) {
+        console.log('Cancelling scheduled blog reset');
+        clearTimeout(resetTimer);
+        resetTimer = null;
+    }
+}
+
+// Function to schedule a blog reset
+function scheduleBlogReset(delayInMs = 15000) {
+    // Cancel any existing timer first
+    cancelScheduledReset();
+    
+    console.log(`No users left. Waiting ${delayInMs/1000} seconds before resetting...`);
+    
+    // Create a new timer
+    resetTimer = setTimeout(() => {
+        // Double-check that no users reconnected
+        if (connectedUsers === 0) {
+            console.log('Blog resetting to default state...');
+            
+            // Import and call the reset function
+            import('./src/data/articlesStore.js')
+                .then(module => {
+                    module.resetArticles(false);
+                    console.log('Blog has been reset successfully');
+                })
+                .catch(err => console.error('Error resetting articles:', err));
+        } else {
+            console.log(`Reset canceled: ${connectedUsers} users connected`);
+        }
+        
+        // Clear the timer reference
+        resetTimer = null;
+    }, delayInMs);
+}
 
 // WebSocket connection handling
 wss.on('connection', (ws) => {
     // Increment counter when user connects
     connectedUsers++;
     console.log(`New user connected! Current users: ${connectedUsers}`);
+    
+    // Cancel any pending reset since we have an active user
+    cancelScheduledReset();
 
     // Handle disconnection and decrement counter
     ws.on('close', () => {
         connectedUsers--;
         console.log(`User disconnected. Current users: ${connectedUsers}`);
 
-        // Check if no users left and reset blog
+        // If no users are left, schedule a blog reset
         if (connectedUsers === 0) {
-            console.log(`No users left. Blog resetting to default state...`);
-            // TODO : Implement blog reset
+            scheduleBlogReset();
         }
     });
 });

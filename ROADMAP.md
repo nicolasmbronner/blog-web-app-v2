@@ -56,6 +56,11 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 - [x] Integrate Font Awesome for UI icons
 - [x] Make article titles clickable with links to article detail pages
 - [x] Improve date formatting for article detail pages to conditionally show edit date
+- [x] **Reset Functionality**: Ensure articles aren't preserved between sessions
+  - [x] Complete WebSocket implementation for tracking users
+  - [x] Implement proper reset when last user disconnects
+  - [x] Add delay mechanism to prevent resets during page navigation
+  - [x] Refactor WebSocket code for better timer management
 
 ### 🔄 In Progress
 - [ ] **Toast Notifications System**: Implement Gmail-like toast system
@@ -76,10 +81,6 @@ This document outlines the development plan for Blog Web App v2, tracking comple
   - [ ] Add animation for article deletion in list
   - [ ] Implement touch swipe gestures for mobile devices
   - [ ] Add article hover effects on desktop
-  
-- [ ] **Reset Functionality**: Ensure articles aren't preserved between sessions
-  - [ ] Complete WebSocket implementation for tracking users
-  - [ ] Implement proper reset when last user disconnects
   
 - [ ] **Styling**: Complete CSS implementation
   - [ ] Implement light and dark themes
@@ -133,4 +134,4 @@ This document outlines the development plan for Blog Web App v2, tracking comple
 
 ---
 
-*Last updated: March 10, 2025*
+*Last updated: March 11, 2025*

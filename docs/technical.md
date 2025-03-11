@@ -87,6 +87,27 @@ blog-web-app-v2/
       - `interactions.js`: Article interactions handling
 - **Tests**: Automated testing suite mirroring src structure
 
+### Real-time Features & State Management
+
+The application uses WebSockets to provide real-time state management:
+
+1. **User Tracking**:
+   - Each connected browser maintains a WebSocket connection
+   - The server keeps track of the number of active connections
+   - When connections reach zero, the blog resets to default state after a delay
+
+2. **WebSocket Architecture**:
+   - `index.js`: Sets up WebSocket server (wss) and manages connection state
+   - `public/js/websocket.js`: Client-side connector that establishes connection
+   - Connection/disconnection events increment/decrement the user counter
+
+3. **Blog Reset Mechanism**:
+   - When the last user disconnects, a timer is started (15 seconds by default)
+   - If a new user connects before the timer expires, the reset is cancelled
+   - If no users reconnect, the blog returns to its default state
+   - Timer management uses a cancelable timeout pattern to prevent race conditions
+   - The `resetArticles` function from articlesStore.js resets all article data
+
 ### REST API & Browser Compatibility
 
 The application follows RESTful principles with some practical adaptations for browser compatibility:
@@ -170,4 +191,4 @@ The application uses EJS templating with a component-based approach:
   - Comprehensive case coverage including edge cases
 - **Running Tests**:
   - `npm test`: Run all tests
-  - `npm run test:coverage`: Generate coverage reports
+  - `npm run test:coverage`: Generate coverage repor
